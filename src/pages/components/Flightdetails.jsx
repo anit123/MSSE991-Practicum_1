@@ -34,7 +34,6 @@ export class Flightdetails extends Component {
         },
       })
       .then((response) => {
-        console.log(response);
         this.setState({ flightDetails: response.data.data.data });
       });
   }
@@ -74,7 +73,7 @@ export class Flightdetails extends Component {
                     <td>{moment(content.startDate).format("MMM Do YY")}</td>
                     <td>{moment(content.endingDate).format("MMM Do YY")}</td>
                     <td>{content.isInbound ? "two way" : "One Way"}</td>
-                    <td>{content.weight}</td>
+                    <td>${content.price}</td>
                     <td onClick={() => this.handlePushToDetails(content)}>
                       <button
                         // to={`/bookingDetails/${content._id}`}
